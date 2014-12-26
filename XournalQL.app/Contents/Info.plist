@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>UTExportedTypeDeclarations</key>
+    <array>
+        <dict>
+            <key>UTTypeIdentifier</key>
+            <string>net.sourceforge.xournal</string>
+            <key>UTTypeDescription</key>
+            <string>Xournal document</string>
+            <key>UTTypeReferenceURL</key>
+            <string>http://xournal.sourceforge.net/</string>
+            <key>UTTypeIconFile</key>
+            <string>public.html.icns</string>
+            <key>UTTypeConformsTo</key>
+            <array>
+                <string>public.data</string>
+            </array>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+                <key>public.filename-extension</key>
+                <array>
+                    <string>xoj</string>
+                </array>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
