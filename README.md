@@ -9,7 +9,7 @@ Manual Installation
 1.  Install [xournal-converters](https://github.com/catch22/xournal-converters) by following the instructions on its homepage.
     At the moment, XournalQL expects `xoj2html` to be available at `/usr/local/bin`.
 
-2.  Download the latest release from [here](...).
+2.  Download the [latest release](https://github.com/catch22/XournalQL/releases).
 
 3.  Using the Finder, copy `XournalQL.app` to `/Applications`.
 
