@@ -33,4 +33,4 @@ Manual Installation
 Technical Remarks
 -----------------
 
-At the moment, XournalQL expects `xoj2html` to be available at `/usr/local/bin`.
+At the moment, XournalQL expects `xoj2pdf` to be available at `/usr/local/bin`.
