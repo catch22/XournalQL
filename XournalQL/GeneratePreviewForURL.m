@@ -4,6 +4,10 @@
 #include <CoreServices/CoreServices.h>
 #include <QuickLook/QuickLook.h>
 
+
+#define XOURNALQL_USE_PDF 1
+
+
 OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options);
 void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);
 
@@ -21,28 +25,34 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
         NSURL *URL = (__bridge NSURL *)url;
         NSString *path = [URL path];
         NSTask *task = [NSTask new];
+#if XOURNALQL_USE_PDF
+        [task setLaunchPath:@"/usr/local/bin/xoj2pdf"];
+#else
         [task setLaunchPath:@"/usr/local/bin/xoj2html"];
+#endif
         NSPipe *pipe = [NSPipe pipe];
         [task setStandardOutput:pipe];
         [task setArguments:@[path]];
         [task launch];
-        NSData *htmlData =  [[pipe fileHandleForReading] readDataToEndOfFile];
+        NSData *data =  [[pipe fileHandleForReading] readDataToEndOfFile];
         [task waitUntilExit];
-        //NSString *html = [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding];
         
         // canceled in the meanwhile?
         if(QLPreviewRequestIsCancelled(preview))
             return noErr;
         
         // preview HTML
-        //htmlData = [@"testing..." dataUsingEncoding:NSUTF8StringEncoding];
+#if XOURNALQL_USE_PDF
+        QLPreviewRequestSetDataRepresentation(preview, (__bridge CFDataRef)data, kUTTypePDF, NULL);
+#else
         NSDictionary *props =
         @{
           (__bridge NSString *)kQLPreviewPropertyTextEncodingNameKey: @"UTF-8",
           (__bridge NSString *)kQLPreviewPropertyMIMETypeKey: @"text/html",
           (__bridge NSString *)kQLPreviewPropertyAttachmentsKey: @{}
         };
-        QLPreviewRequestSetDataRepresentation(preview, (__bridge CFDataRef)htmlData, kUTTypeHTML, (__bridge CFDictionaryRef)props);
+        QLPreviewRequestSetDataRepresentation(preview, (__bridge CFDataRef)data, kUTTypeHTML, (__bridge CFDictionaryRef)props);
+#endif
         return noErr;
     }
 }
