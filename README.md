@@ -3,7 +3,7 @@ XournalQL
 
 QuickLook plugin for Xournal documents.
 
-![](https://raw.githubusercontent.com/catch22/XournalQL/master/Sample.png "XournalQL Screenshot")
+![](https://raw.githubusercontent.com/catch22/XournalQL/master/Screenshot.png "XournalQL Screenshot")
 
 
 Installation via Homebrew-Cask
