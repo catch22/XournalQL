@@ -30,7 +30,6 @@ Manual Installation
     Possibly run `qlmanage -r` to reload the QuickLook infrastructure.
 
 
-Technical Remarks
------------------
+##### Technical Remarks
 
 At the moment, XournalQL expects `xoj2pdf` to be available at `/usr/local/bin`.
