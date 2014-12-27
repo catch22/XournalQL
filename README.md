@@ -7,7 +7,7 @@ QuickLook plugin for Xournal documents.
 Installation via Homebrew-Cask
 ------------------------------
 
-There is a preliminary [Cask]((https://github.com/caskroom/homebrew-cask) file that can be used to install  in `Cask/xournalql.rb`
+There is a preliminary [Cask](https://github.com/caskroom/homebrew-cask) file that can be used to install XournalQL.
 
 1.  Install [xournal-converters](https://github.com/catch22/xournal-converters) by running `pip install xournal-converters`.
 
