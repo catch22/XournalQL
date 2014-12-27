@@ -3,11 +3,21 @@ XournalQL
 
 QuickLook plugin for Xournal documents.
 
+
+Installation via Homebrew-Cask
+------------------------------
+
+There is a preliminary [Cask]((https://github.com/caskroom/homebrew-cask) file that can be used to install  in `Cask/xournalql.rb`
+
+1.  Install [xournal-converters](https://github.com/catch22/xournal-converters) by running `pip install xournal-converters`.
+
+2.  Download [xournalql.rb](https://github.com/catch22/XournalQL/tree/master/Cask/xournalql.rb) and run `brew cask install xournalql.rb`.
+
+
 Manual Installation
 -------------------
 
-1.  Install [xournal-converters](https://github.com/catch22/xournal-converters) by following the instructions on its homepage.
-    At the moment, XournalQL expects `xoj2html` to be available at `/usr/local/bin`.
+1.  Install [xournal-converters](https://github.com/catch22/xournal-converters) by running `pip install xournal-converters`.
 
 2.  Download the [latest release](https://github.com/catch22/XournalQL/releases).
 
@@ -17,4 +27,8 @@ Manual Installation
     Create this folder if it does not exist.
     Possibly run `qlmanage -r` to reload the QuickLook infrastructure.
 
-This package might at some point be available on [homebrew-cask](https://github.com/caskroom/homebrew-cask).
+
+Technical Remarks
+-----------------
+
+At the moment, XournalQL expects `xoj2html` to be available at `/usr/local/bin`.
